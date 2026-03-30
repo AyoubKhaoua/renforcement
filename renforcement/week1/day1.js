@@ -1,9 +1,10 @@
 /* Pensez a filter() pour eliminer les falsy et les doublons.
 Pour les doublons : indexOf() ou includ() peuvent vous aider. */
-let tableau = [false, 7, 7, "", 8, undefined, 8, 4];
-/* function nettoyer(tableau) {
+let tableau = [false, 7, 4, "", 8, undefined, 8, 0, 8, 4];
+let t = [1, 2, 3, 4, 5, 6];
+function nettoyer(tableau) {
   tableau.forEach((tb) => {
-    if (!tb || tb === 0 || tb === "" || tableau.includes(tb)) {
+    if (!tb && tableau.includes(tb)) {
       let index = tableau.indexOf(tb);
 
       tableau = tableau
@@ -12,8 +13,8 @@ let tableau = [false, 7, 7, "", 8, undefined, 8, 4];
     }
   });
   console.log(tableau);
-} */
-function nettoyer(tableau) {
+}
+/* function nettoyer(tableau) {
   let resultat = [];
 
   tableau.forEach((tb) => {
@@ -21,8 +22,5 @@ function nettoyer(tableau) {
       resultat.push(tb);
     }
   });
-
-  resultat.sort((a, b) => a - b);
-  console.log(resultat);
-}
+} */
 nettoyer(tableau);
